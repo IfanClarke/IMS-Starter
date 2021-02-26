@@ -114,7 +114,7 @@ public class CustomerDAO implements Dao<Customer> {
 			statement.setString(2, customer.getSurname());
 			statement.setLong(3, customer.getId());
 			statement.executeUpdate();
-			return read(customer.getId());
+			return read(customer.getId());	
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
@@ -138,6 +138,12 @@ public class CustomerDAO implements Dao<Customer> {
 			LOGGER.error(e.getMessage());
 		}
 		return 0;
+	}
+
+	@Override
+	public Customer modelFromResultSetReadAll(ResultSet resultSetReadAll) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
