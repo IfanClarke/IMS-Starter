@@ -1,5 +1,6 @@
 package com.qa.ims.utils;
 
+import java.util.Map;
 import java.util.Scanner;
 
 import org.apache.logging.log4j.LogManager;
@@ -51,5 +52,8 @@ public class Utils {
 		} while (doubleInput == null);
 		return doubleInput;
 	}
+	
+
+
 
 }

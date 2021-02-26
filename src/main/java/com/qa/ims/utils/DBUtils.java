@@ -33,11 +33,17 @@ public class DBUtils {
 		this.dbUrl = dbProps.getProperty("db.url", "");
 		this.dbUser = dbProps.getProperty("db.user", "");
 		this.dbPassword = dbProps.getProperty("db.password", "");
+		
+		init();
 	}
 
-	public DBUtils() {
-		this("db.properties");
-	}
+		public int init() {
+			return this.init("../main/resources/sql-schema.sql", "../main/resources/sql-data.sql");
+		}
+		
+		public DBUtils() {
+			this("db.properties");
+		}
 
 	public int init(String... paths) {
 		int modified = 0;
